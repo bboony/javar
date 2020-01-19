@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+public class APCSA
+{
+  public static ArrayList<Integer> process1(int n)
+  {
+    ArrayList<Integer> someList = new ArrayList<Integer>();
+    for (int k = 0; k < n; k++)
+      someList.add(new Integer(k));
+    return someList;
+  }
+  public static ArrayList<Integer> process2(int n)
+  {
+    ArrayList<Integer> someList = new ArrayList<Integer>();
+    for (int k = 0; k < n; k++)
+      someList.add(k, new Integer(k));
+    return someList;
+  }
+   public static void main (String [] args)
+  {
+    long startTime = System.nanoTime();
+    ArrayList<Integer> abc = process2(3533);
+    long endTime = System.nanoTime();
+    System.out.println(abc+" Took "+(endTime - startTime) + " ns");
+    long startTime2 = System.nanoTime();
+    ArrayList<Integer> cde = process1(3533);
+    long endTime2 = System.nanoTime();
+    System.out.println(cde+" Took "+(endTime - startTime) + " ns");
+  }
+}
+  
